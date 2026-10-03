@@ -1,0 +1,3639 @@
+/* =========================================================
+   TPEG KIDDIES — PRODUCTION LANDING PAGE
+   Mobile-first / Responsive / Conversion-focused
+========================================================= */
+
+
+/* =========================================================
+   1. ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --green: #168A52;
+    --green-dark: #0B633A;
+    --green-deep: #063A24;
+    --green-light: #E8F7EF;
+
+    --black: #0B0F0D;
+    --black-soft: #151A17;
+
+    --white: #FFFFFF;
+    --cream: #FFFDF8;
+    --cream-dark: #F7F3EA;
+
+    --yellow: #FFC83D;
+    --yellow-light: #FFF5D6;
+
+    --text: #18201B;
+    --text-light: #66716B;
+
+    --border: #E4E9E5;
+    --border-dark: #CFD8D2;
+
+    --danger: #D93025;
+    --success: #168A52;
+
+    --shadow-sm:
+        0 4px 16px rgba(6, 58, 36, 0.06);
+
+    --shadow:
+        0 12px 35px rgba(6, 58, 36, 0.10);
+
+    --shadow-lg:
+        0 24px 65px rgba(6, 58, 36, 0.16);
+
+    --radius-sm: 10px;
+    --radius: 18px;
+    --radius-lg: 28px;
+    --radius-xl: 36px;
+
+    --container: 1180px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+
+    width: 100%;
+    max-width: 100%;
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--cream);
+    color: var(--text);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+
+img {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-light),
+            var(--cream-dark)
+        );
+}
+
+
+button,
+input,
+textarea {
+
+    font: inherit;
+}
+
+
+button {
+
+    cursor: pointer;
+}
+
+
+a {
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+ul {
+
+    list-style: none;
+}
+
+
+::selection {
+
+    background: var(--green);
+    color: var(--white);
+}
+
+
+/* =========================================================
+   3. CONTAINER
+========================================================= */
+
+.container {
+
+    width: min(
+        calc(100% - 32px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   4. ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+
+    outline: 3px solid var(--yellow);
+    outline-offset: 4px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   5. SECTION UTILITIES
+========================================================= */
+
+section {
+
+    position: relative;
+
+    min-width: 0;
+}
+
+
+.section-heading {
+
+    max-width: 720px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+
+.section-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+    color: var(--green);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+.section-heading h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--black);
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        3rem
+    );
+
+    line-height: 1.08;
+
+    font-weight: 900;
+
+    letter-spacing: -0.04em;
+}
+
+
+.section-heading p {
+
+    max-width: 600px;
+
+    margin: 16px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   6. BUTTONS
+========================================================= */
+
+.primary-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 58px;
+
+    padding: 0 28px;
+
+    border-radius: 999px;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    box-shadow:
+        0 10px 25px
+        rgba(22, 138, 82, 0.24);
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.primary-button span {
+
+    font-size: 1.2rem;
+
+    transition:
+        transform var(--transition);
+}
+
+
+.primary-button:hover {
+
+    background: var(--green-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(22, 138, 82, 0.30);
+}
+
+
+.primary-button:hover span {
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   7. HEADER
+========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-bottom:
+        1px solid
+        rgba(228, 233, 229, 0.8);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+
+.header-inner {
+
+    min-height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 7px;
+
+    white-space: nowrap;
+
+    min-width: 0;
+}
+
+
+.brand-main {
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--green);
+
+    font-size: 1.35rem;
+    font-weight: 900;
+
+    letter-spacing: -0.04em;
+}
+
+
+.brand-sub {
+
+    color: var(--black);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+
+.header-order-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 999px;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+
+.header-order-btn:hover {
+
+    background: var(--green);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   8. HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F7FFF9 0%,
+            #FFFFFF 52%,
+            #EAF8F0 100%
+        );
+
+    padding:
+        48px 0
+        56px;
+}
+
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(22, 138, 82, 0.12),
+            transparent 32%
+        );
+
+    pointer-events: none;
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    gap: 42px;
+
+    align-items: center;
+
+    min-width: 0;
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-width: 0;
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 13px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid
+        rgba(22, 138, 82, 0.15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(232, 247, 239, 0.85);
+
+    color: var(--green-dark);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+}
+
+
+.hero h1 {
+
+    max-width: 650px;
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--black);
+
+    font-size: clamp(
+        2.5rem,
+        9vw,
+        4.7rem
+    );
+
+    line-height: 0.98;
+
+    font-weight: 900;
+
+    letter-spacing: -0.055em;
+
+    overflow-wrap: break-word;
+}
+
+
+.hero h1 span {
+
+    color: var(--green);
+}
+
+
+.hero-description {
+
+    max-width: 610px;
+
+    margin-top: 20px;
+
+    color: var(--text-light);
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+
+.hero-price {
+
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+
+.hero-price strong {
+
+    order: 1;
+
+    color: var(--green);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(
+        2.1rem,
+        7vw,
+        3.2rem
+    );
+
+    line-height: 1;
+
+    font-weight: 900;
+}
+
+
+.hero-price .old-price {
+
+    order: 2;
+
+    color: #8C948F;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    text-decoration:
+        line-through;
+}
+
+
+.hero-trust {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px 16px;
+
+    margin-top: 18px;
+}
+
+
+.hero-trust span {
+
+    color: var(--green-dark);
+
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+
+.hero-cta {
+
+    width: 100%;
+
+    max-width: 360px;
+
+    margin-top: 26px;
+}
+
+
+.hero-note {
+
+    margin-top: 12px;
+
+    color: #7A847E;
+
+    font-size: 0.72rem;
+}
+
+
+.hero-product {
+
+    position: relative;
+
+    min-height: 340px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+.hero-product-glow {
+
+    position: absolute;
+
+    width: 80%;
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(22, 138, 82, 0.17),
+            rgba(22, 138, 82, 0)
+        );
+
+    filter: blur(8px);
+}
+
+
+.hero-product-image {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        100%,
+        510px
+    );
+
+    max-height: 520px;
+
+    object-fit: contain;
+
+    background: transparent;
+
+    filter:
+        drop-shadow(
+            0 28px 35px
+            rgba(0, 0, 0, 0.18)
+        );
+
+    animation:
+        heroFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(0.4deg);
+    }
+}
+
+
+.hero-product-tag {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 8px;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    max-width: 75%;
+
+    padding: 13px 16px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.8);
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.hero-product-tag strong {
+
+    color: var(--black);
+
+    font-size: 0.78rem;
+}
+
+
+.hero-product-tag span {
+
+    margin-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 0.66rem;
+}
+
+
+/* =========================================================
+   9. VIDEO
+========================================================= */
+
+.video-section {
+
+    padding:
+        72px 0;
+
+    background: var(--white);
+}
+
+
+.video-wrapper {
+
+    width: 100%;
+
+    max-width: 940px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    background: var(--black);
+
+    box-shadow: var(--shadow-lg);
+
+    aspect-ratio: 16 / 9;
+}
+
+
+.video-wrapper iframe {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+
+.video-points {
+
+    max-width: 850px;
+
+    margin: 22px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+.video-points div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 11px;
+
+    border-radius: 12px;
+
+    background: var(--green-light);
+
+    color: var(--green-dark);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+
+.video-points span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    flex: 0 0 27px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   10. WHY IT MATTERS
+========================================================= */
+
+.problem-section {
+
+    padding:
+        72px 0;
+
+    background: var(--cream);
+}
+
+
+.problem-grid {
+
+    display: grid;
+
+    gap: 40px;
+
+    align-items: center;
+
+    min-width: 0;
+}
+
+
+.problem-image {
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-lg);
+
+    min-width: 0;
+}
+
+
+.problem-image img {
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.problem-image:hover img {
+
+    transform: scale(1.04);
+}
+
+
+.problem-content {
+
+    min-width: 0;
+}
+
+
+.problem-content h2 {
+
+    max-width: 600px;
+
+    margin-top: 4px;
+
+    font-family: "Nunito", sans-serif;
+
+    color: var(--black);
+
+    font-size: clamp(
+        2rem,
+        6vw,
+        3.3rem
+    );
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -0.045em;
+}
+
+
+.problem-content h2 span {
+
+    color: var(--green);
+}
+
+
+.problem-content > p {
+
+    max-width: 540px;
+
+    margin-top: 18px;
+
+    color: var(--text-light);
+}
+
+
+.check-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+.check-list li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--black);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+
+.check-list span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    flex: 0 0 26px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   11. HOW IT WORKS
+========================================================= */
+
+.how-section {
+
+    padding:
+        72px 0;
+
+    background: var(--white);
+}
+
+
+.steps-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.step-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+
+.step-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(22, 138, 82, 0.25);
+
+    box-shadow: var(--shadow);
+}
+
+
+.step-number {
+
+    position: absolute;
+
+    top: 22px;
+    left: 22px;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    box-shadow:
+        0 7px 16px
+        rgba(22, 138, 82, 0.25);
+}
+
+
+.step-image {
+
+    overflow: hidden;
+
+    border-radius: 13px;
+
+    background: var(--green-light);
+}
+
+
+.step-image img {
+
+    aspect-ratio: 1 / 0.8;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.step-card:hover .step-image img {
+
+    transform: scale(1.05);
+}
+
+
+.step-card h3 {
+
+    margin-top: 16px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+
+.step-card p {
+
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================================
+   12. WHAT YOU GET
+========================================================= */
+
+.kit-section {
+
+    padding:
+        72px 0;
+
+    background:
+        var(--cream-dark);
+}
+
+
+.kit-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.kit-card {
+
+    overflow: hidden;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.kit-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.kit-image {
+
+    overflow: hidden;
+
+    background: var(--green-light);
+}
+
+
+.kit-image img {
+
+    aspect-ratio: 1 / 0.8;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.kit-card:hover .kit-image img {
+
+    transform: scale(1.05);
+}
+
+
+.kit-content {
+
+    padding: 18px;
+}
+
+
+.kit-content > span {
+
+    color: var(--green);
+
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+
+.kit-content h3 {
+
+    margin-top: 6px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1rem;
+    font-weight: 900;
+
+    line-height: 1.2;
+}
+
+
+.kit-content p {
+
+    margin-top: 7px;
+
+    color: var(--text-light);
+
+    font-size: 0.78rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   13. LEARNING
+========================================================= */
+
+.learning-section {
+
+    padding:
+        72px 0;
+
+    background: var(--white);
+}
+
+
+.learning-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.learning-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 145px;
+
+    padding: 20px 12px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--cream);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+
+.learning-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(22, 138, 82, 0.25);
+
+    background: var(--green-light);
+}
+
+
+.learning-icon {
+
+    font-size: 2rem;
+
+    line-height: 1;
+}
+
+
+.learning-card h3 {
+
+    margin-top: 12px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 0.85rem;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   14. AGE GUIDE
+========================================================= */
+
+.age-section {
+
+    padding:
+        72px 0;
+
+    background: var(--cream);
+}
+
+
+.age-grid {
+
+    display: grid;
+
+    gap: 16px;
+}
+
+
+.age-card {
+
+    position: relative;
+
+    padding: 28px 22px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+.age-card.featured {
+
+    border:
+        2px solid var(--green);
+
+    box-shadow:
+        0 15px 40px
+        rgba(22, 138, 82, 0.12);
+}
+
+
+.age-icon {
+
+    font-size: 2.8rem;
+}
+
+
+.age-range {
+
+    display: block;
+
+    margin-top: 14px;
+
+    color: var(--green);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+
+.age-card h3 {
+
+    margin-top: 3px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+
+.age-card p {
+
+    max-width: 270px;
+
+    margin: 8px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 0.8rem;
+}
+
+
+
+/* ========================================================= REAL CUSTOMER PROOF ========================================================= */
+.customer-proof-section { padding: 72px 0; background: linear-gradient( 180deg, var(--cream) 0%, var(--white) 100% ); }
+/* GRID */
+.customer-proof-grid { display: grid; gap: 20px; }
+/* CARD */
+.customer-proof-card { overflow: hidden;
+background: var(--white);
+
+border: 1px solid var(--border);
+border-radius: var(--radius-lg);
+
+box-shadow: var(--shadow-sm);
+
+transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+.customer-proof-card:hover { transform: translateY(-5px);
+border-color: rgba(22, 138, 82, .25);
+
+box-shadow: var(--shadow-lg);
+}
+/* IMAGE */
+.customer-proof-image { position: relative;
+overflow: hidden;
+
+background: var(--green-light);
+}
+.customer-proof-image img { display: block;
+width: 100%;
+
+aspect-ratio: 4 / 5;
+
+object-fit: cover;
+
+object-position: top center;
+
+transition: transform .5s ease;
+}
+.customer-proof-card:hover .customer-proof-image img { transform: scale(1.025); }
+/* STEP NUMBER */
+.proof-step { position: absolute;
+top: 14px;
+left: 14px;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+width: 42px;
+height: 42px;
+
+border-radius: 50%;
+
+background: rgba(6, 58, 36, .95);
+
+color: var(--white);
+
+font-family: "Nunito", sans-serif;
+
+font-size: .75rem;
+
+font-weight: 900;
+
+box-shadow:
+    0 8px 20px rgba(0, 0, 0, .18);
+}
+/* CONTENT */
+.customer-proof-content { padding: 22px; }
+.proof-label { display: inline-block;
+
+color: var(--green);
+
+font-size: .66rem;
+
+font-weight: 900;
+
+letter-spacing: .1em;
+}
+.customer-proof-content h3 { margin-top: 7px;
+color: var(--black);
+
+font-family: "Nunito", sans-serif;
+
+font-size: 1.25rem;
+
+line-height: 1.2;
+
+font-weight: 900;
+}
+.customer-proof-content p { margin-top: 9px;
+color: var(--text-light);
+
+font-size: .82rem;
+
+line-height: 1.65;
+}
+/* TRUST STRIP */
+.proof-trust-strip { display: grid;
+grid-template-columns: 1fr;
+
+gap: 10px;
+
+margin-top: 22px;
+}
+.proof-trust-item { display: flex;
+align-items: center;
+
+gap: 11px;
+
+min-width: 0;
+
+padding: 14px;
+
+background: var(--white);
+
+border: 1px solid var(--border);
+
+border-radius: 14px;
+}
+.proof-trust-item > span { display: flex;
+align-items: center;
+justify-content: center;
+
+flex: 0 0 28px;
+
+width: 28px;
+height: 28px;
+
+border-radius: 50%;
+
+background: var(--green);
+
+color: var(--white);
+
+font-size: .72rem;
+
+font-weight: 900;
+}
+.proof-trust-item strong { display: block;
+color: var(--black);
+
+font-size: .72rem;
+
+line-height: 1.3;
+
+font-weight: 900;
+}
+.proof-trust-item small { display: block;
+margin-top: 2px;
+
+color: var(--text-light);
+
+font-size: .62rem;
+
+line-height: 1.35;
+}
+/* TABLET */
+@media (min-width: 600px) {
+.customer-proof-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.proof-trust-strip {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+/* DESKTOP */
+@media (min-width: 900px) {
+.customer-proof-section {
+    padding: 95px 0;
+}
+
+.customer-proof-grid {
+    gap: 22px;
+}
+
+.customer-proof-content {
+    padding: 25px;
+}
+}
+/* LARGE DESKTOP */
+@media (min-width: 1200px) {
+.customer-proof-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+}
+
+/* =========================================================
+   16. PACKAGES
+========================================================= */
+
+.packages-section {
+
+    padding:
+        76px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--cream) 0%,
+            #F2F9F5 100%
+        );
+}
+
+
+.packages-grid {
+
+    display: grid;
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+.package-card {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 26px 22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+
+.package-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+.package-card.popular {
+
+    border:
+        2px solid var(--green);
+
+    box-shadow:
+        0 18px 50px
+        rgba(22, 138, 82, 0.16);
+}
+
+
+.popular-badge {
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    padding: 7px 15px;
+
+    border-radius: 999px;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.62rem;
+    font-weight: 900;
+
+    letter-spacing: 0.06em;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 7px 18px
+        rgba(22, 138, 82, 0.25);
+}
+
+
+.package-label {
+
+    color: var(--green);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+}
+
+
+.package-card h3 {
+
+    margin-top: 7px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.45rem;
+    font-weight: 900;
+}
+
+
+.package-price {
+
+    margin-top: 12px;
+
+    color: var(--green-dark);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 2.3rem;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -0.04em;
+
+    overflow-wrap: anywhere;
+}
+
+
+.package-features {
+
+    display: grid;
+
+    gap: 11px;
+
+    margin-top: 20px;
+}
+
+
+.package-features li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    color: var(--text);
+
+    font-size: 0.78rem;
+
+    line-height: 1.4;
+}
+
+
+.package-features li span {
+
+    flex: 0 0 auto;
+
+    color: var(--green);
+
+    font-weight: 900;
+}
+
+
+.package-button {
+
+    width: 100%;
+
+    min-height: 54px;
+
+    margin-top: 25px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--black);
+    color: var(--white);
+
+    font-size: 0.78rem;
+    font-weight: 900;
+
+    letter-spacing: 0.03em;
+
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+
+.package-button span {
+
+    margin-left: 6px;
+
+    font-size: 1rem;
+}
+
+
+.package-button:hover {
+
+    background: var(--green);
+
+    transform: translateY(-2px);
+}
+
+
+.package-card.popular .package-button {
+
+    background: var(--green);
+}
+
+
+.package-card.popular .package-button:hover {
+
+    background: var(--green-dark);
+}
+
+
+/* =========================================================
+   17. TRUST
+========================================================= */
+
+.trust-section {
+
+    padding:
+        72px 0;
+
+    background: var(--white);
+}
+
+
+.trust-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.trust-card {
+
+    padding: 22px 15px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background: var(--cream);
+}
+
+
+.trust-icon {
+
+    font-size: 2rem;
+}
+
+
+.trust-card h3 {
+
+    margin-top: 10px;
+
+    color: var(--black);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+
+.trust-card p {
+
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   18. ORDER SECTION
+========================================================= */
+
+.order-section {
+
+    padding:
+        76px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-deep),
+            var(--green-dark)
+        );
+}
+
+
+.order-grid {
+
+    display: grid;
+
+    gap: 35px;
+
+    min-width: 0;
+}
+
+
+.order-intro {
+
+    color: var(--white);
+
+    min-width: 0;
+}
+
+
+.order-intro .section-eyebrow {
+
+    color: #9BE3BB;
+}
+
+
+.order-intro h2 {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(
+        2rem,
+        7vw,
+        3.4rem
+    );
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    letter-spacing: -0.045em;
+}
+
+
+.order-intro > p {
+
+    max-width: 500px;
+
+    margin-top: 14px;
+
+    color:
+        rgba(255,255,255,0.75);
+}
+
+
+.order-product-summary {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    padding: 17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    border-radius: var(--radius);
+
+    background:
+        rgba(255,255,255,0.08);
+
+    min-width: 0;
+}
+
+
+.summary-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    flex: 0 0 46px;
+
+    border-radius: 13px;
+
+    background: var(--yellow);
+
+    font-size: 1.35rem;
+}
+
+
+.order-product-summary > div:last-child {
+
+    min-width: 0;
+}
+
+
+.order-product-summary span {
+
+    display: block;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 0.68rem;
+}
+
+
+.order-product-summary strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--white);
+
+    font-size: 0.9rem;
+
+    overflow-wrap: anywhere;
+}
+
+
+.order-total-display {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 15px;
+
+    padding: 15px 17px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,0.05);
+}
+
+
+.order-total-display span {
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 0.8rem;
+}
+
+
+.order-total-display strong {
+
+    color: var(--yellow);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.7rem;
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+.order-benefits {
+
+    display: grid;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+
+.order-benefits div {
+
+    color:
+        rgba(255,255,255,0.84);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   19. ORDER FORM
+========================================================= */
+
+.order-form-wrapper {
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 22px;
+
+    border-radius: var(--radius-lg);
+
+    background: var(--white);
+
+    box-shadow: var(--shadow-lg);
+
+    min-width: 0;
+}
+
+
+.form-group {
+
+    margin-bottom: 17px;
+
+    min-width: 0;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--black);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+
+.form-group input,
+.form-group textarea {
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #FBFCFB;
+
+    color: var(--black);
+
+    padding:
+        13px 14px;
+
+    font-size: 0.85rem;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 105px;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color: #9BA39E;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    border-color: var(--green);
+
+    background: var(--white);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(22, 138, 82, 0.09);
+}
+
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 0.68rem;
+}
+
+
+.form-package-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.mini-package {
+
+    cursor: pointer;
+
+    min-width: 0;
+}
+
+
+.mini-package input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.mini-package span {
+
+    min-height: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 4px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: var(--cream);
+
+    transition:
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+
+.mini-package strong {
+
+    color: var(--black);
+
+    font-size: 0.72rem;
+
+    white-space: nowrap;
+}
+
+
+.mini-package small {
+
+    margin-top: 3px;
+
+    color: var(--green);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+}
+
+
+.mini-package input:checked + span {
+
+    border-color: var(--green);
+
+    background: var(--green-light);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(22, 138, 82, 0.08);
+}
+
+
+.payment-notice {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: var(--yellow-light);
+}
+
+
+.payment-notice > span {
+
+    font-size: 1.1rem;
+}
+
+
+.payment-notice strong {
+
+    color: var(--black);
+
+    font-size: 0.72rem;
+}
+
+
+.payment-notice p {
+
+    margin-top: 2px;
+
+    color: #6F6447;
+
+    font-size: 0.65rem;
+
+    line-height: 1.45;
+}
+
+
+.submit-button {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.85rem;
+    font-weight: 900;
+
+    letter-spacing: 0.03em;
+
+    box-shadow:
+        0 10px 24px
+        rgba(22, 138, 82, 0.20);
+
+    transition:
+        transform var(--transition),
+        background var(--transition);
+}
+
+
+.submit-button:hover {
+
+    background: var(--green-dark);
+
+    transform: translateY(-2px);
+}
+
+
+.submit-button:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.form-security-note {
+
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #89928D;
+
+    font-size: 0.65rem;
+}
+
+
+.form-message {
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border-radius: 11px;
+
+    font-size: 0.75rem;
+
+    line-height: 1.5;
+}
+
+
+.success-message {
+
+    background: var(--green-light);
+
+    color: var(--green-dark);
+}
+
+
+.error-message {
+
+    background: #FDECEC;
+
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   20. WHY TPEG
+========================================================= */
+
+.why-tpeg-section {
+
+    padding:
+        72px 0;
+
+    background: var(--cream);
+}
+
+
+.why-tpeg-list {
+
+    display: grid;
+
+    gap: 10px;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+.why-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 13px;
+
+    background: var(--white);
+
+    color: var(--black);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+.why-item span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    flex: 0 0 27px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   21. FAQ
+========================================================= */
+
+.faq-section {
+
+    padding:
+        72px 0;
+
+    background: var(--white);
+}
+
+
+.faq-list {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+
+.faq-item {
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.faq-item:first-child {
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.faq-item summary {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 19px 0;
+
+    cursor: pointer;
+
+    color: var(--black);
+
+    font-size: 0.85rem;
+    font-weight: 800;
+
+    list-style: none;
+}
+
+
+.faq-item summary::-webkit-details-marker {
+
+    display: none;
+}
+
+
+.faq-item summary span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 27px;
+    height: 27px;
+
+    flex: 0 0 27px;
+
+    border-radius: 50%;
+
+    background: var(--green-light);
+    color: var(--green);
+
+    font-size: 1rem;
+
+    transition:
+        transform var(--transition);
+}
+
+
+.faq-item[open] summary span {
+
+    transform: rotate(45deg);
+}
+
+
+.faq-answer {
+
+    padding:
+        0 42px
+        18px 0;
+}
+
+
+.faq-answer p {
+
+    color: var(--text-light);
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   22. FINAL CTA
+========================================================= */
+
+.final-cta {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        80px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-deep),
+            var(--green)
+        );
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.final-cta::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    top: -230px;
+    right: -180px;
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+
+.final-cta-content {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.final-cta .section-eyebrow {
+
+    color: #A8EBC4;
+}
+
+
+.final-cta h2 {
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: clamp(
+        2rem,
+        7vw,
+        3.7rem
+    );
+
+    line-height: 1.04;
+
+    font-weight: 900;
+
+    letter-spacing: -0.045em;
+}
+
+
+.final-cta p {
+
+    margin-top: 16px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 0.95rem;
+}
+
+
+.final-price {
+
+    margin-top: 10px;
+
+    color: var(--yellow);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 2.7rem;
+    font-weight: 900;
+}
+
+
+.final-trust {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px 18px;
+
+    margin-top: 18px;
+}
+
+
+.final-trust span {
+
+    color:
+        rgba(255,255,255,0.85);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+
+.final-cta .primary-button {
+
+    margin-top: 27px;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.18);
+}
+
+
+.final-cta .primary-button:hover {
+
+    background: var(--white);
+}
+
+
+/* =========================================================
+   23. MOBILE STICKY CTA
+   SINGLE SOURCE OF TRUTH
+========================================================= */
+
+.mobile-sticky-cta {
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 100vw;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        8px 10px;
+
+    background:
+        rgba(6, 58, 36, 0.98);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 -8px 30px
+        rgba(0,0,0,0.15);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    overflow: hidden;
+}
+
+
+.sticky-price {
+
+    flex:
+        0 1 auto;
+
+    min-width: 0;
+
+    max-width: 42%;
+
+    color: var(--white);
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 0.82rem;
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.sticky-order-button {
+
+    flex:
+        1 1 0;
+
+    min-width: 0;
+
+    width: auto;
+    max-width: 100%;
+
+    min-height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding:
+        0 12px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-decoration: none;
+}
+
+
+.sticky-order-button span {
+
+    flex: 0 0 auto;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   24. FOOTER
+========================================================= */
+
+.site-footer {
+
+    padding:
+        40px 0
+        95px;
+
+    background: var(--black);
+
+    color: var(--white);
+}
+
+
+.footer-content {
+
+    text-align: center;
+}
+
+
+.footer-brand strong {
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+
+.footer-brand p {
+
+    margin-top: 5px;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 0.72rem;
+}
+
+
+.footer-trust {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px 14px;
+
+    margin-top: 20px;
+}
+
+
+.footer-trust span {
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 0.65rem;
+}
+
+
+.copyright {
+
+    margin-top: 22px;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   25. TABLET — 600px+
+========================================================= */
+
+@media (min-width: 600px) {
+
+    .container {
+
+        width: min(
+            calc(100% - 48px),
+            var(--container)
+        );
+    }
+
+
+    .hero {
+
+        padding:
+            70px 0
+            80px;
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns:
+            0.95fr
+            1.05fr;
+
+        gap: 35px;
+    }
+
+
+    .hero-content {
+        order: 1;
+    }
+
+
+    .hero-product {
+
+        order: 2;
+
+        min-height: 480px;
+    }
+
+
+    .hero-cta {
+
+        width: auto;
+
+        min-width: 245px;
+    }
+
+
+    .video-points {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .problem-grid {
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 55px;
+    }
+
+
+    .problem-content {
+
+        padding-left: 10px;
+    }
+
+
+    .age-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .proof-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .proof-placeholder {
+
+        min-height: 260px;
+    }
+
+
+    .packages-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .trust-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .order-grid {
+
+        grid-template-columns:
+            0.9fr
+            1.1fr;
+
+        align-items: center;
+
+        gap: 60px;
+    }
+
+
+    .order-form-wrapper {
+
+        padding: 30px;
+    }
+
+
+    .learning-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .why-tpeg-list {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   26. DESKTOP — 900px+
+========================================================= */
+
+@media (min-width: 900px) {
+
+    .container {
+
+        width: min(
+            calc(100% - 64px),
+            var(--container)
+        );
+    }
+
+
+    .header-inner {
+
+        min-height: 76px;
+    }
+
+
+    .hero {
+
+        min-height: 690px;
+
+        display: flex;
+
+        align-items: center;
+
+        padding:
+            80px 0
+            90px;
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns:
+            0.9fr
+            1.1fr;
+
+        gap: 60px;
+    }
+
+
+    .hero h1 {
+
+        font-size: clamp(
+            3.7rem,
+            5vw,
+            5.2rem
+        );
+    }
+
+
+    .hero-description {
+
+        font-size: 1.05rem;
+    }
+
+
+    .hero-product {
+
+        min-height: 560px;
+    }
+
+
+    .hero-product-image {
+
+        width: min(
+            100%,
+            580px
+        );
+
+        max-height: 590px;
+    }
+
+
+    .hero-product-tag {
+
+        right: 15px;
+
+        bottom: 25px;
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 58px;
+    }
+
+
+    .problem-image img {
+
+        aspect-ratio: 1 / 0.88;
+    }
+
+
+    .steps-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 18px;
+    }
+
+
+    .kit-grid {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+
+    .learning-grid {
+
+        grid-template-columns:
+            repeat(6, 1fr);
+    }
+
+
+    .learning-card {
+
+        min-height: 160px;
+    }
+
+
+    .package-card {
+
+        padding:
+            32px 26px;
+    }
+
+
+    .package-card.popular {
+
+        transform: translateY(-8px);
+    }
+
+
+    .package-card.popular:hover {
+
+        transform:
+            translateY(-14px);
+    }
+
+
+    .final-cta {
+
+        padding:
+            110px 0;
+    }
+
+
+    .mobile-sticky-cta {
+
+        display: none;
+    }
+
+
+    .site-footer {
+
+        padding-bottom: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   27. LARGE DESKTOP — 1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .hero-grid {
+
+        gap: 80px;
+    }
+
+
+    .hero {
+
+        min-height: 730px;
+    }
+
+
+    .hero-product-image {
+
+        width: 610px;
+    }
+
+
+    .problem-section,
+    .how-section,
+    .kit-section,
+    .learning-section,
+    .age-section,
+    .proof-section,
+    .trust-section,
+    .why-tpeg-section,
+    .faq-section {
+
+        padding-top: 95px;
+
+        padding-bottom: 95px;
+    }
+
+
+    .video-section,
+    .packages-section,
+    .order-section {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+    }
+
+}
+
+
+/* =========================================================
+   28. SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .container {
+
+        width:
+            calc(100% - 24px);
+    }
+
+
+    .brand-sub {
+
+        display: none;
+    }
+
+
+    .hero {
+
+        padding-top: 35px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.25rem;
+    }
+
+
+    .hero-description {
+
+        font-size: 0.88rem;
+    }
+
+
+    .hero-trust {
+
+        gap: 6px 10px;
+    }
+
+
+    .hero-trust span {
+
+        font-size: 0.67rem;
+    }
+
+
+    .hero-product {
+
+        min-height: 280px;
+    }
+
+
+    .hero-product-tag {
+
+        right: -3px;
+
+        bottom: 0;
+
+        padding: 10px 12px;
+    }
+
+
+    .hero-product-tag strong {
+
+        font-size: 0.68rem;
+    }
+
+
+    .hero-product-tag span {
+
+        font-size: 0.58rem;
+    }
+
+
+    .package-price {
+
+        font-size: 2rem;
+    }
+
+
+    .order-form-wrapper {
+
+        padding: 17px;
+    }
+
+
+    .form-package-options {
+
+        gap: 5px;
+    }
+
+
+    .mini-package span {
+
+        padding:
+            6px 3px;
+    }
+
+
+    .mini-package strong {
+
+        font-size: 0.65rem;
+    }
+
+
+    .mini-package small {
+
+        font-size: 0.6rem;
+    }
+
+
+    .mobile-sticky-cta {
+
+        gap: 6px;
+
+        padding:
+            7px 8px;
+    }
+
+
+    .sticky-price {
+
+        max-width: 38%;
+
+        font-size: 0.75rem;
+    }
+
+
+    .sticky-order-button {
+
+        min-height: 42px;
+
+        padding:
+            0 9px;
+
+        font-size: 0.68rem;
+    }
+
+}
+
+
+/* =========================================================
+   29. VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .sticky-price {
+
+        display: none;
+    }
+
+
+    .mobile-sticky-cta {
+
+        display: flex;
+
+        gap: 5px;
+
+        padding:
+            6px 8px;
+    }
+
+
+    .sticky-order-button {
+
+        min-height: 42px;
+
+        font-size: 0.75rem;
+    }
+
+}
+
+
+/* =========================================================
+   30. HIDDEN UTILITY
+========================================================= */
+
+[hidden] {
+
+    display: none !important;
+}
